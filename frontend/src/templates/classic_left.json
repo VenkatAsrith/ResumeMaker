@@ -1,0 +1,27 @@
+{
+    "id": "classic_left",
+    "name": "Classic Left",
+    "description": "Traditional layout with left sidebar",
+    "version": "1.0.0",
+    "colors": {
+        "primary": "#059669",
+        "secondary": "#047857",
+        "accent": "#10b981",
+        "text": "#1f2937",
+        "textLight": "#4b5563",
+        "background": "#ffffff",
+        "sidebarBackground": "#059669",
+        "sidebarText": "#ffffff"
+    },
+    "fonts": {
+        "heading": "Outfit, sans-serif",
+        "body": "Inter, sans-serif"
+    },
+    "layout": {
+        "type": "two-column",
+        "sidebarPosition": "left",
+        "sidebarWidth": "220px",
+        "headerStyle": "sidebar",
+        "sectionSpacing": "compact"
+    }
+}

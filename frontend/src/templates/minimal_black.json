@@ -1,0 +1,23 @@
+{
+    "id": "minimal_black",
+    "name": "Minimal Black",
+    "description": "Elegant minimalist design in black and white",
+    "version": "1.0.0",
+    "colors": {
+        "primary": "#1f2937",
+        "secondary": "#111827",
+        "accent": "#4b5563",
+        "text": "#111827",
+        "textLight": "#6b7280",
+        "background": "#ffffff"
+    },
+    "fonts": {
+        "heading": "Outfit, sans-serif",
+        "body": "Inter, sans-serif"
+    },
+    "layout": {
+        "type": "single-column",
+        "headerStyle": "left-aligned",
+        "sectionSpacing": "relaxed"
+    }
+}

@@ -1,0 +1,23 @@
+{
+    "id": "modern_blue",
+    "name": "Modern Blue",
+    "description": "Clean and modern design with blue accents",
+    "version": "1.0.0",
+    "colors": {
+        "primary": "#2563eb",
+        "secondary": "#1e40af",
+        "accent": "#3b82f6",
+        "text": "#1f2937",
+        "textLight": "#4b5563",
+        "background": "#ffffff"
+    },
+    "fonts": {
+        "heading": "Outfit, sans-serif",
+        "body": "Inter, sans-serif"
+    },
+    "layout": {
+        "type": "single-column",
+        "headerStyle": "centered",
+        "sectionSpacing": "normal"
+    }
+}
