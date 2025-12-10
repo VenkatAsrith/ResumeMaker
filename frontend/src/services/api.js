@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-const API_BASE_URL = '/api';
+// Get API URL from environment or use relative path for production
+const API_BASE_URL = import.meta.env.VITE_API_URL || '/api';
 
 // Create axios instance
 const api = axios.create({
@@ -8,6 +9,7 @@ const api = axios.create({
     headers: {
         'Content-Type': 'application/json',
     },
+    timeout: 30000, // 30 second timeout
 });
 
 // Add auth token to requests
@@ -28,11 +30,22 @@ api.interceptors.request.use(
 api.interceptors.response.use(
     (response) => response,
     (error) => {
+        // Handle network errors
+        if (!error.response) {
+            console.error('Network error:', error.message);
+            return Promise.reject(new Error('Network error. Please check your connection.'));
+        }
+
+        // Handle 401 unauthorized
         if (error.response?.status === 401) {
             localStorage.removeItem('token');
             localStorage.removeItem('user');
-            window.location.href = '/';
+            // Only redirect if not already on home page
+            if (window.location.pathname !== '/') {
+                window.location.href = '/';
+            }
         }
+
         return Promise.reject(error);
     }
 );
@@ -89,6 +102,7 @@ export const resumeAPI = {
             headers: {
                 'Content-Type': 'multipart/form-data',
             },
+            timeout: 60000, // 60 second timeout for file uploads
         });
         return response.data;
     },
